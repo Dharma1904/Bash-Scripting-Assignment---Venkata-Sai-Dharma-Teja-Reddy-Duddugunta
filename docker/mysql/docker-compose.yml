@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  mysqldb:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+    cap_add:
+      - SYS_NICE    # https://stackoverflow.com/questions/55559386/how-to-fix-mbind-operation-not-permitted-in-mysql-error-log
+    volumes:
+      - ./mysql-data:/var/lib/mysql
