@@ -25,3 +25,5 @@ echo Body: $4
 
 echo "$4" > message.txt
 mpack -s "$2" -d message.txt "$3" "$1"
+
+# ssmtp -v ToAddress < message.txt
